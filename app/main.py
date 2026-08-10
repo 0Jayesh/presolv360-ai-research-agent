@@ -1,5 +1,5 @@
 from app.pipeline import run_research
-
+from app.report import render_markdown_report
 
 URLS = [
     "https://insights.som.yale.edu/insights/the-real-job-destruction-from-ai-is-hitting-before-careers-can-start",
@@ -37,3 +37,10 @@ if __name__ == "__main__":
 
         if item.gap:
             print("Gap:", item.gap)
+
+    report = render_markdown_report(comparison)
+
+    with open("research_brief.md", "w", encoding="utf-8") as f:
+        f.write(report)
+
+    print("\nReport written to research_brief.md")
