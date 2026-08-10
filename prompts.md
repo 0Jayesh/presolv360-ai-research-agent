@@ -1,8 +1,11 @@
 # AI-Assisted Build Prompts
 
-This file contains the key prompts used during development. The prompts
-were intentionally iterative: I started with a high-level design and
-refined the implementation and constraints as I tested the system.
+This file contains the key prompts used during the build, selected from
+the iterative development conversation. The interaction was intentionally
+iterative rather than a single upfront specification.
+
+The prompts below capture the major design decisions, implementation
+constraints, and refinements made during development.
 
 ## 1. Initial Architecture
 
@@ -118,3 +121,16 @@ Include:
 
 Do not generate new research claims during rendering. The renderer
 should only present the structured comparison result.
+
+## Build Iteration Notes / Validation
+
+During implementation I iteratively:
+- validated the Pydantic schemas
+- tested the Gemini structured-output call
+- tested source fetching
+- tested per-source extraction
+- tested cross-source comparison
+- refined the comparator after observing overly broad contradiction
+  classifications
+- added the Markdown report stage
+- ran the complete test suite and end-to-end pipeline
